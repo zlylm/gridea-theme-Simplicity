@@ -1,0 +1,21 @@
+<div class="post-container">
+  <% posts.forEach(function(post) { %>
+    <article class="article-item">
+      <span class="yuan"></span>
+      <span class="time"><%= post.dateFormat %></span>
+      <div class="content">
+        <h1><a href="<%= post.link %>"><%= post.title %></a></h1>
+        <div class="imgCon">
+          <div class="imgStyle">
+            <% if (themeConfig.showFeatureImage && post.feature) { %>
+              <img src="<%= post.feature %>"/>
+            <% } %>
+          </div>
+          <div class="dec">
+            <%- post.abstract %>
+          </div>
+        </div>
+      </div>
+    </article>
+  <% }); %>
+</div>
